@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const puppeteer = require('pupeteer')
+const puppeteer = require('puppeteer')
 const fs = require("fs");
 
 const PORT = process.env.PORT || 5000;
