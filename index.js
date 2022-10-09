@@ -61,8 +61,8 @@ app.use("/api/", async (req, res) => {
     });
 	
 	await page.setViewport({
-    width: 1920,
-    height: 1080
+    width: 1080,
+    height: 800
 })
 
     await page.screenshot({
