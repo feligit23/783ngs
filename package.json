@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "puppeteer": "^18.0.5",
-    "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-adblocker": "^2.13.5"
+    "puppeteer": "^18.0.5"
   }
 }

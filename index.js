@@ -47,6 +47,10 @@ app.use("/api/", async (req, res) => {
         '--no-sandbox',
         '--disable-setuid-sandbox',
       ],
+	  defaultViewport: {
+        width:1920,
+        height:1080
+      }
     });
 
     // Create a new page
