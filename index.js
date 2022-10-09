@@ -46,6 +46,7 @@ app.use("/api/", async (req, res) => {
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
+		 '--window-size=1920,1080'
       ],
 	  defaultViewport: {
         width:1080,
