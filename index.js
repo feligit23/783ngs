@@ -7,7 +7,7 @@ const axios = require('axios');
 
 async function getUser() {
   try {
-    const response = await axios.get("https://powerful-fortress-62863.herokuapp.com/api/");
+    const response = await axios.get("https://node-websnap67.onrender.com/");
     console.log("website pings to keep alive");
   } catch (error) {
     console.error(error);
