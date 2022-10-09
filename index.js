@@ -46,7 +46,8 @@ app.use("/api/", async (req, res) => {
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
-      ]
+      ],
+	   ignoreDefaultArgs: ["--disable-extensions"]
     });
 
     // Create a new page
@@ -60,8 +61,8 @@ app.use("/api/", async (req, res) => {
     });
 	
 await page.setViewport({
-    width: 1920px,
-    height: 1080px
+    width: 1920,
+    height: 1080
 })
 
 
