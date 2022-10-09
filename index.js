@@ -2,13 +2,17 @@ const express = require("express");
 const path = require("path");
 const puppeteer = require('puppeteer')
 const fs = require("fs");
-const sys = require('sys')
-const exec = require('child_process').exec;
 const cron = require('node-cron');
+const axios = require('axios');
 
-function puts(error, stdout, stderr) { sys.puts(stdout) }
-
-
+async function getUser() {
+  try {
+    const response = await axios.get("https://powerful-fortress-62863.herokuapp.com/api/");
+    console.log("website pings to keep alive");
+  } catch (error) {
+    console.error(error);
+  }
+}
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -19,8 +23,9 @@ app.use(express.json());
 
 cron.schedule('10 * * * *', () => {
   console.log('running a task every minute');
-  exec("ping -c 3 localhost", puts);
+  getUser()
 });
+
 
 app.use("/api/", async (req, res) => {
   function generateID() {
