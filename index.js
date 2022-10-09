@@ -49,7 +49,7 @@ app.use("/api/", async (req, res) => {
       ],
 	  defaultViewport: {
         width:1080,
-        height:800
+        height:600
       }
     });
 
