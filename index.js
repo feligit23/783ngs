@@ -60,10 +60,7 @@ app.use("/api/", async (req, res) => {
       timeout: 0,
     });
 	
-	await page.setViewport({
-    width: 1920,
-    height: 1080
-})
+
 
     await page.screenshot({
       path: path.join(
