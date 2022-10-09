@@ -59,13 +59,10 @@ app.use("/api/", async (req, res) => {
       timeout: 0,
     });
 	
-	await page.evaluate(() => {
-    return {
-      width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight,
-      deviceScaleFactor: window.devicePixelRatio,
-    };
-  });
+await page.setViewport({
+    width: 1920px,
+    height: 1080px
+})
 
 
     await page.screenshot({
