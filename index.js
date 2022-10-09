@@ -48,8 +48,8 @@ app.use("/api/", async (req, res) => {
         '--disable-setuid-sandbox',
       ],
 	  defaultViewport: {
-        width:1920,
-        height:1080
+        width:1280,
+        height:800
       }
     });
 
