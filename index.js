@@ -2,6 +2,12 @@ const express = require("express");
 const path = require("path");
 const puppeteer = require('puppeteer')
 const fs = require("fs");
+const sys = require('sys')
+const exec = require('child_process').exec;
+const cron = require('node-cron');
+
+function puts(error, stdout, stderr) { sys.puts(stdout) }
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -10,6 +16,11 @@ const app = express();
 app.disable('x-powered-by');
 
 app.use(express.json());
+
+cron.schedule('10 * * * *', () => {
+  console.log('running a task every minute');
+  exec("ping -c 3 localhost", puts);
+});
 
 app.use("/api/", async (req, res) => {
   function generateID() {
