@@ -46,12 +46,8 @@ app.use("/api/", async (req, res) => {
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
-		 '--window-size=1080,800'
       ],
-	  defaultViewport: {
-        width:1080,
-        height:600
-      }
+	  defaultViewport: null
     });
 
     // Create a new page
@@ -63,6 +59,11 @@ app.use("/api/", async (req, res) => {
       // Remove the timeoutt
       timeout: 0,
     });
+	
+	await page.setViewport({
+    width: 1920,
+    height: 1080
+})
 
     await page.screenshot({
       path: path.join(
